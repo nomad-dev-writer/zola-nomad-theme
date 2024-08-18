@@ -1,0 +1,98 @@
+@use './functions.scss' as f;
+@use './variables.scss' as v;
+
+// Layout
+@mixin fullHeight() {
+  & {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 0;
+    min-height: 100vh;
+  }
+}
+
+@mixin responsiveMargin($usePadding: false) {
+  @each $breakpoint, $margin in v.$body-margins {
+    @media (min-width: map-get(v.$breakpoints, $breakpoint)) {
+      @if ($usePadding) {
+        padding-right: $margin;
+        padding-left: $margin;
+      } @else {
+        margin-right: $margin;
+        margin-left: $margin;
+      }
+    }
+  }
+}
+
+@mixin responsiveGap() {
+  @each $breakpoint, $margin in v.$body-margins {
+    @media (min-width: map-get(v.$breakpoints, $breakpoint)) {
+      @if ($breakpoint == xs) {
+        gap: 0;
+      } @else {
+        gap: $margin;
+      }
+    }
+  }
+}
+
+// Media queries
+@mixin xs() {
+  @media (max-width: (f.sm() - 0.02)) {
+    @content;
+  }
+}
+
+@mixin sm() {
+  @media (min-width: f.sm()) {
+    @content;
+  }
+}
+
+@mixin md() {
+  @media (min-width: f.md()) {
+    @content;
+  }
+}
+
+@mixin lg() {
+  @media (min-width: f.lg()) {
+    @content;
+  }
+}
+
+@mixin xl() {
+  @media (min-width: f.xl()) {
+    @content;
+  }
+}
+
+// Typography
+@mixin fontTitle() {
+  margin-bottom: 0.5em;
+  font-weight: v.$headings-font-weight;
+  font-size: v.$h1-font-size;
+  line-height: 1.1;
+  font-family: v.$font-family-serif;
+  letter-spacing: 0.02em;
+}
+
+@mixin fontSubtitle() {
+  font-weight: v.$font-weight-light;
+  font-size: v.$h2-font-size;
+  line-height: 1.1;
+}
+
+@mixin fontHeadline() {
+  font-weight: v.$font-weight-light;
+  font-size: v.$h3-font-size;
+  line-height: 1.2;
+}
+
+@mixin fontOverview() {
+  font-weight: v.$font-weight-bold;
+  font-size: v.$h3-font-size;
+  line-height: 1.2;
+}

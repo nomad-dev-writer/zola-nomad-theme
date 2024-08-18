@@ -1,0 +1,17 @@
+@use './variables.scss' as v;
+
+@function sm() {
+  @return map-get(v.$breakpoints, sm);
+}
+
+@function md() {
+  @return map-get(v.$breakpoints, md);
+}
+
+@function lg() {
+  @return map-get(v.$breakpoints, lg);
+}
+
+@function xl() {
+  @return map-get(v.$breakpoints, xl);
+}

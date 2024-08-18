@@ -1,0 +1,9 @@
+@use './variables.scss' as v;
+
+body {
+  --background: #{v.$white};
+  --font-color: #{v.$grey-dark};
+  --link-color: #{v.$grey};
+  --footer-font-color: #{v.$white};
+  --footer-background: #{v.$black};
+}

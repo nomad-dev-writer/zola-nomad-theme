@@ -1,0 +1,129 @@
+@use './mixins.scss' as m;
+@use './variables' as v;
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.toolbar {
+  @include m.responsiveMargin(/*usePadding=*/ true);
+
+  & {
+    display: flex;
+    position: sticky;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: v.$toolbar-height;
+    width: 100%;
+    height: v.$toolbar-height;
+
+    a {
+      border: 0;
+    }
+  }
+}
+
+.site-title {
+  margin: 0;
+  font-size: v.$font-size-base;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  font-size: v.$font-size-base;
+  list-style: none;
+}
+
+.main {
+  @include m.responsiveMargin(/*usePadding=*/ true);
+
+  & {
+    display: flex;
+    position: relative;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: stretch;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    max-width: v.$max-content-width;
+  }
+}
+
+.posted-on,
+.time {
+  font-size: v.$small-font-size;
+}
+
+// Entry list
+.entries {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2em;
+
+  .excerpt {
+    margin: 0;
+  }
+}
+
+.entry-header {
+  margin-bottom: 24px;
+}
+
+.markdown {
+  h3 {
+    font-size: 1.2rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  hr {
+    display: block;
+    border: 0;
+    border-top: 2px solid var(--link-color);
+    padding-bottom: 4rem;
+    width: 20%;
+  }
+
+  > picture,
+  > img,
+  > video {
+    margin-bottom: 3rem;
+
+    @include m.md() {
+      width: 85%;
+    }
+    @include m.xl() {
+      width: 66.67%;
+    }
+  }
+
+  pre {
+    padding: 0.5em;
+    font-size: v.$font-size-base;
+    font-family: v.$font-family-monospace;
+  }
+}
+
+.footer {
+  @include m.responsiveMargin(/*usePadding=*/ true);
+
+  & {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--footer-background);
+    height: v.$footer-height;
+    color: var(--footer-font-color);
+    font-size: v.$small-font-size;
+  }
+}
+

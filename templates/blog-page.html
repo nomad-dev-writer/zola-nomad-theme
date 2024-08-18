@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<article class="entry">
+  <header class="entry-header">
+    <h1 class="title">{{ page.title }}</h1>
+    <p class="posted-on">
+      Posted on <time class="time" datetime="{{ page.date }}">{{ page.date | date }}</time>
+    </p>
+  </header>
+
+  <div class="markdown">
+    {{ page.content | safe }}
+  </div>
+</article>
+
+{% endblock content %}

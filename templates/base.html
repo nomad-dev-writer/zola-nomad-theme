@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#797979" />
+    <meta
+      name="description"
+      content="{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}"
+    />
+    <meta
+      property="og:title"
+      content="{% if page.title %}{{ page.title }} | {% endif %}{{ config.title }}"
+    />
+    <meta property="og:url" content="{{ config.base_url | safe }}" />
+    <meta
+      property="og:description"
+      content="{% if page.description %}{{ page.description | safe }}{% else %}{{ config.description | safe }}{% endif %}"
+    />
+
+    {% if page.thumbnail %}
+    <meta
+      property="og:image"
+      content="{{ page.thumbnail | safe }}"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="{{ page.description }}"
+    />
+    {% elif config.thumbnail %}
+    <meta
+      property="og:image"
+      content="{{ config.thumbnail | safe }}"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="{{ config.description }}"
+    />
+    {% endif %}
+
+    <meta property="og:type" content="website" />
+
+    <link rel="stylesheet" href="/style.css" />
+
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Inter:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    >
+
+    <!--
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/logo192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/logo512.png" />
+    -->
+
+    {% if config.ga %}
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id={{ config.ga }}"
+    />
+    <script>
+      // Define dataLayer and the gtag function.
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+      gtag('config', '{{ config.ga }}');
+
+      // Don't use any cookies. Cookieless pings are sufficient for a personal website.
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+      });
+    </script>
+    {% endif %}
+
+    <title>
+      {% if page.title %}{{ page.title }} | {% endif %}{{ config.title }}
+    </title>
+  </head>
+
+  <body>
+    <header class="toolbar">
+      <h2 class="site-title">
+        <a href="/">{{ config.title }}</a>
+      </h2>
+
+      {% if config.extra.menu %}
+      <nav>
+        <ul class="menu">
+          {# Somewhat complex, but this is to preserve order. #}
+          {% for menu in config.extra.menu %}
+            {% for name, link in menu %}
+              <li><a href="{{ link | safe }}">{{ name }}</a></li>
+            {% endfor %}
+          {% endfor %}
+        </ul>
+      </nav>
+      {% endif %}
+    </header>
+
+    <div class="main">{% block content %}{% endblock %}</div>
+
+    {% if config.extra.footer %}
+    {% set footer = config.extra.footer %}
+    <footer class="footer">
+      <small>
+        &copy; {{ footer.copyright }}
+      </small>
+
+      <small>
+        {{ footer.version }}
+      </small>
+    </footer>
+    {% endif %}
+  </body>
+</html>

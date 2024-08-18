@@ -1,0 +1,99 @@
+@use './variables' as v;
+@use './mixins' as m;
+
+@import './theme';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  background: var(--background);
+  color: var(--font-color);
+  font-size: v.$default-font-size;
+  line-height: 1.2;
+  font-family: v.$font-family-sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  margin-top: 2em;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-size: v.$p-font-size;
+  line-height: 1.4;
+}
+
+a {
+  transition: text-decoration 0.15s;
+  color: inherit;
+  text-decoration-color: transparent;
+
+  &:hover {
+    text-decoration-color: var(--link-color);
+  }
+}
+
+ul,
+ol,
+dl {
+  margin: 0 0 1rem;
+}
+
+dd {
+  margin-left: 0;
+}
+
+figure {
+  margin: 0 0 1rem;
+}
+
+img {
+  margin-bottom: 1rem;
+  max-width: 100%;
+}
+
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+abbr[title] {
+  cursor: inherit;
+  text-decoration: none;
+}
+
+q {
+  font-style: italic;
+}
+
+small {
+  font-size: 0.75em;
+}
+
+::selection {
+  background-color: color-mix(in srgb, v.$yellow 50%, transparent);
+}
+
+@import './layout';

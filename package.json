@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "prettier-plugin-css-order": "^2.1.2",
+    "prettier-plugin-toml": "^2.0.1",
+    "stylelint": "^16.8.2",
+    "stylelint-config-recommended-scss": "^14.1.0",
+    "stylelint-prettier": "^5.0.2",
+    "stylelint-scss": "^6.5.0"
+  }
+}

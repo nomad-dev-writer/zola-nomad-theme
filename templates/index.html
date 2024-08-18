@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+{% set section = get_section(path="blog/_index.md") %}
+
+<div class="entries">
+  {% for page in section.pages %}
+  <article class="entry">
+    <time class="time" datetime="{{ page.date }}">{{ page.date | date }}</time>
+
+    <a href="{{ page.permalink | safe}}">
+      <h1 class="title">{{ page.title }}</h1>
+      <p class="excerpt">{{ page.description }}</p>
+    </a>
+  </article>
+  {% endfor %}
+</div>
+{% endblock content %}

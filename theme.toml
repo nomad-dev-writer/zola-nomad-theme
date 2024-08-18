@@ -1,0 +1,14 @@
+name = "The Nomad Theme"
+description = "Just another minimal blog theme"
+license = "MIT"
+homepage = "https://github.com/nomad-dev-writer/zola-nomad-theme"
+# The minimum version of Zola required
+min_version = "0.4.0"
+# An optional live demo URL
+demo = ""
+
+[extra]
+
+[author]
+name = "Nomad Dev Writer"
+homepage = "https://nomad-dev-blog.github.io"
