@@ -5,4 +5,5 @@ module.exports = {
   singleQuote: true,
   semi: true,
   plugins: ['prettier-plugin-css-order', 'prettier-plugin-toml'],
+  proseWrap: 'always',
 };
