@@ -92,8 +92,4 @@ small {
   font-size: 0.75em;
 }
 
-::selection {
-  background-color: color-mix(in srgb, v.$yellow 50%, transparent);
-}
-
 @import './layout';
