@@ -41,7 +41,6 @@ h3 {
 p {
   margin-top: 0;
   margin-bottom: 0.5em;
-  font-size: v.$p-font-size;
   line-height: 1.4;
 }
 
@@ -93,3 +92,7 @@ small {
 }
 
 @import './layout';
+
+.markdown {
+  @import './markdown';
+}

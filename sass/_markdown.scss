@@ -1,0 +1,45 @@
+@use './variables' as v;
+@use './mixins' as m;
+
+// TODO...
+
+& {
+  font-size: v.$p-font-size;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+h3 {
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+hr {
+  display: block;
+  border: 0;
+  border-top: 2px solid var(--link-color);
+  padding-bottom: 4rem;
+  width: 20%;
+}
+
+> picture,
+> img,
+> video {
+  margin-bottom: 3rem;
+
+  @include m.md() {
+    width: 85%;
+  }
+  @include m.xl() {
+    width: 66.67%;
+  }
+}
+
+pre {
+  padding: 0.5em;
+  font-size: v.$font-size-base;
+  font-family: v.$font-family-monospace;
+}

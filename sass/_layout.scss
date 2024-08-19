@@ -4,6 +4,7 @@
 body {
   display: flex;
   flex-direction: column;
+  gap: 48px;
   min-height: 100vh;
 }
 
@@ -16,7 +17,10 @@ body {
     top: 0;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: v.$toolbar-height;
+    z-index: 1;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background-color: color-mix(in srgb, var(--background) 75%, transparent);
     width: 100%;
     height: v.$toolbar-height;
 
@@ -78,46 +82,13 @@ body {
   margin-bottom: 24px;
 }
 
-.markdown {
-  h3 {
-    font-size: 1.2rem;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-  }
-
-  hr {
-    display: block;
-    border: 0;
-    border-top: 2px solid var(--link-color);
-    padding-bottom: 4rem;
-    width: 20%;
-  }
-
-  > picture,
-  > img,
-  > video {
-    margin-bottom: 3rem;
-
-    @include m.md() {
-      width: 85%;
-    }
-    @include m.xl() {
-      width: 66.67%;
-    }
-  }
-
-  pre {
-    padding: 0.5em;
-    font-size: v.$font-size-base;
-    font-family: v.$font-family-monospace;
-  }
-}
-
 .footer {
   @include m.responsiveMargin(/*usePadding=*/ true);
 
   & {
     display: flex;
+    position: sticky;
+    bottom: 0;
     justify-content: space-between;
     align-items: center;
     background-color: var(--footer-background);
@@ -126,4 +97,3 @@ body {
     font-size: v.$small-font-size;
   }
 }
-
