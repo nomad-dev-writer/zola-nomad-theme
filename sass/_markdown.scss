@@ -1,0 +1,132 @@
+@use './variables' as v;
+@use './mixins' as m;
+
+& {
+  font-size: v.$p-font-size;
+  line-height: 1.4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: max(0.5em, 1rem);
+
+  &:has(+ p) {
+    margin: 0;
+  }
+}
+
+h1 {
+  font-size: v.$h1-font-size;
+}
+
+h2 {
+  font-size: v.$h2-font-size;
+}
+
+h3 {
+  font-size: v.$h3-font-size;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: v.$h4-font-size;
+}
+
+h5 {
+  font-size: v.$h5-font-size;
+}
+
+h6 {
+  font-size: v.$h6-font-size;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-size: v.$p-font-size;
+  line-height: 1.4;
+}
+
+hr {
+  display: block;
+  border: 0;
+  border-top: 2px solid var(--link-color);
+  padding-bottom: 4rem;
+  width: 20%;
+}
+
+> picture,
+> img,
+> video {
+  margin-bottom: 3rem;
+
+  @include m.md() {
+    width: 85%;
+  }
+  @include m.xl() {
+    width: 66.67%;
+  }
+}
+
+code,
+pre {
+  font-size: v.$font-size-base;
+  font-family: v.$font-family-monospace;
+}
+
+pre {
+  padding: 0.5em;
+}
+
+ul,
+ol,
+dl {
+  margin: 0 0 1rem;
+}
+
+li {
+  ul,
+  ol,
+  dl {
+    margin-bottom: 0;
+  }
+}
+
+dd {
+  margin-left: 0;
+}
+
+figure {
+  margin: 0 0 1rem;
+}
+
+img {
+  margin-bottom: 1rem;
+  max-width: 100%;
+}
+
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+abbr[title] {
+  cursor: inherit;
+  text-decoration: none;
+}
+
+q {
+  font-style: italic;
+}
+
+small {
+  font-size: 0.75em;
+}
