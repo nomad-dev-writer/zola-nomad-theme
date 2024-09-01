@@ -31,3 +31,7 @@ a {
 }
 
 @import './layout';
+
+.markdown {
+  @import './markdown';
+}
