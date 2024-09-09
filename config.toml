@@ -22,4 +22,4 @@ render_emoji = true
 
 menu = [{ "Home" = "/" }, { "About" = "/about" }]
 
-footer = { "copyright" = "2024", "version" = "0.0.1" }
+footer = { "copyright" = "2024", "version" = "0.0.2" }
