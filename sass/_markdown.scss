@@ -62,23 +62,6 @@ hr {
   width: 20%;
 }
 
-> picture,
-> img,
-> video {
-  display: block;
-  margin-bottom: 3rem;
-  max-width: 100%;
-
-  @include m.md() {
-    margin-right: auto;
-    margin-left: auto;
-    width: 85%;
-  }
-  @include m.xl() {
-    width: 66.67%;
-  }
-}
-
 code,
 pre {
   font-size: v.$font-size-base;
@@ -107,15 +90,6 @@ dd {
   margin-left: 0;
 }
 
-figure {
-  margin: 0 0 1rem;
-}
-
-video {
-  max-width: 100%;
-  height: auto;
-}
-
 abbr[title] {
   cursor: inherit;
   text-decoration: none;
@@ -127,4 +101,26 @@ q {
 
 small {
   font-size: 0.75em;
+}
+
+// Media
+> picture,
+> img,
+> video {
+  display: block;
+  margin-bottom: 1rem;
+  max-width: 100%;
+
+  @include m.md() {
+    margin-right: auto;
+    margin-left: auto;
+    width: 85%;
+  }
+  @include m.xl() {
+    width: 66.67%;
+  }
+}
+
+figure {
+  margin: 0 0 1rem;
 }
