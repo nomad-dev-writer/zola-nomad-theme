@@ -3,7 +3,7 @@
 
 & {
   font-size: v.$p-font-size;
-  line-height: 1.4;
+  line-height: 1.7;
 }
 
 h1,
@@ -50,9 +50,8 @@ h6 {
 
 p {
   margin-top: 0;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
   font-size: v.$p-font-size;
-  line-height: 1.4;
 }
 
 hr {
@@ -66,9 +65,13 @@ hr {
 > picture,
 > img,
 > video {
+  display: block;
   margin-bottom: 3rem;
+  max-width: 100%;
 
   @include m.md() {
+    margin-right: auto;
+    margin-left: auto;
     width: 85%;
   }
   @include m.xl() {
@@ -106,11 +109,6 @@ dd {
 
 figure {
   margin: 0 0 1rem;
-}
-
-img {
-  margin-bottom: 1rem;
-  max-width: 100%;
 }
 
 video {

@@ -95,4 +95,9 @@ def main():
 
 ```
 
+Below is an image I took a long time ago when I first started to learn
+photography.
+
+{{ img(path="/blog/damyang-2007-85-EDIT.jpg", width=1440, height=1440 op="fit_width", alt="A bamboo shoot.") }}
+
 More styles to come!
