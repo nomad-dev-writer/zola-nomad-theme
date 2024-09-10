@@ -68,7 +68,7 @@
     {% if config.extra.ga %}
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id={{ config.ga }}"
+      src="https://www.googletagmanager.com/gtag/js?id={{ config.extra.ga }}"
     />
     <script>
       // Define dataLayer and the gtag function.
@@ -78,7 +78,7 @@
       }
 
       gtag('js', new Date());
-      gtag('config', '{{ config.ga }}');
+      gtag('config', '{{ config.extra.ga }}');
 
       // Don't use any cookies. Cookieless pings are sufficient for a personal website.
       gtag('consent', 'default', {
