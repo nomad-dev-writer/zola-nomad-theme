@@ -47,7 +47,10 @@
 
     <link rel="stylesheet" href="/style.css" />
 
+    {% if config.extra.ga %}
     <link rel="preconnect" href="https://www.googletagmanager.com" />
+    {% endif %}
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -62,7 +65,7 @@
     <link rel="apple-touch-icon" sizes="512x512" href="/logo512.png" />
     -->
 
-    {% if config.ga %}
+    {% if config.extra.ga %}
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id={{ config.ga }}"
