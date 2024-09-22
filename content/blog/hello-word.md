@@ -71,6 +71,8 @@ Followed by a paragraph.
 
 Followed by a paragraph.
 
+# A long heading that should be wrapped with reasonable line height.
+
 - List 1
   - Nested list 1
   - Nested list 2
