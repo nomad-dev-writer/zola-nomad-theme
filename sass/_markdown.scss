@@ -54,6 +54,15 @@ p {
   font-size: v.$p-font-size;
 }
 
+// Invert the underline behaviour for markdown.
+a {
+  text-decoration-color: var(--link-color);
+
+  &:hover {
+    text-decoration-color: transparent;
+  }
+}
+
 hr {
   display: block;
   border: 0;
